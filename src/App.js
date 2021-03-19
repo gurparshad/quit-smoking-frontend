@@ -15,6 +15,7 @@ import Motivation from "./components/Motivation/Motivation";
 import Achievements from "./components/Achievements/Achievements";
 import LiveChat from "./components/LiveChat/LiveChat";
 import CreatePost from "./components/CreatePost/CreatePost";
+import MyPosts from "./components/MyPosts/MyPosts";
 
 export const authentication = {
   isLoggedIn: false,
@@ -79,6 +80,9 @@ function App() {
           </Route>
           <Route path="/createPost">
             <CreatePost />
+          </Route>
+          <Route path="/myPosts">
+            <MyPosts />
           </Route>
 
           {/* <SecuredRoute path="/dashboard" component={Dashboard}></SecuredRoute> */}

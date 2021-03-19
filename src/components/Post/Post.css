@@ -1,0 +1,25 @@
+.post {
+  border: 1px solid rgb(105, 97, 97);
+  border-radius: 10px;
+  width: 70%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  padding: 10px;
+  text-align: left;
+}
+
+.post__userName {
+  text-align: right;
+}
+
+.post__deleteBtn {
+  width: 200px;
+  color: aliceblue;
+  font-size: large;
+  background-color: #b6190e;
+  border-radius: 10px;
+  border: none;
+  padding: 10px;
+}
