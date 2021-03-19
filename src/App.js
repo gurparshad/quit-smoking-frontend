@@ -13,6 +13,7 @@ import Community from "./components/Community/Community";
 import Tips from "./components/Tips/Tips";
 import Motivation from "./components/Motivation/Motivation";
 import Achievements from "./components/Achievements/Achievements";
+import LiveChat from "./components/LiveChat/LiveChat";
 
 export const authentication = {
   isLoggedIn: false,
@@ -72,6 +73,10 @@ function App() {
           <Route path="/achievements">
             <Achievements />
           </Route>
+          <Route path="/livechat">
+            <LiveChat />
+          </Route>
+
           {/* <SecuredRoute path="/dashboard" component={Dashboard}></SecuredRoute> */}
           {/* <SecuredRoute path="/community" component={Community}></SecuredRoute> */}
         </Switch>
