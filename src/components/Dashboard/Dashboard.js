@@ -11,6 +11,7 @@ const Dashboard = () => {
     const diff = endDate - startDate;
     console.log(diff);
     const diffDuration = moment.duration(diff);
+    console.log(diffDuration);
     const days = diffDuration.days();
     console.log(days);
     const hours = diffDuration.hours();

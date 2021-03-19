@@ -12,6 +12,7 @@ import Dashboard from "./components/Dashboard/Dashboard";
 import Community from "./components/Community/Community";
 import Tips from "./components/Tips/Tips";
 import Motivation from "./components/Motivation/Motivation";
+import Achievements from "./components/Achievements/Achievements";
 
 export const authentication = {
   isLoggedIn: false,
@@ -67,6 +68,9 @@ function App() {
           </Route>
           <Route path="/motivation">
             <Motivation />
+          </Route>
+          <Route path="/achievements">
+            <Achievements />
           </Route>
           {/* <SecuredRoute path="/dashboard" component={Dashboard}></SecuredRoute> */}
           {/* <SecuredRoute path="/community" component={Community}></SecuredRoute> */}
