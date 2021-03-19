@@ -1,0 +1,53 @@
+[
+    {
+        "id": "1",
+        "quote": "The surest way not to fail is to determine to succeed.",
+        "writer": "Richard Brinsley Sheridan"
+    },
+    {
+        "id": "2",
+        "quote": "It does not matter how slowly you go so long as you do not stop.",
+        "writer": "Confucius"
+    },
+    {
+        "id": "3",
+        "quote": "Every human has four endowments- self-awareness, conscience, independent will, and creative imagination. These give us the ultimate human freedom… The power to choose, to respond, to change.",
+        "writer": "Stephen Covey"
+    },
+    {
+        "id": "4",
+        "quote": "Believe you can, and you’re halfway there.",
+        "writer": "Theodore Roosevelt"
+    },
+    {
+        "id": "5",
+        "quote": "At least three times every day, take a moment and ask yourself what is really important. Have the wisdom and the courage to build your life around your answer.",
+        "writer": "Lee Jampolsky"
+    },
+    {
+        "id": "6",
+        "quote": "You can have anything you want if you want it badly enough. You can be anything you want to be, do anything you set out to accomplish if you hold to that desire with singleness of purpose.",
+        "writer": "Abraham Lincoln"
+    },
+    {
+        "id": "7",
+        "quote": "You are greater than your addiction.",
+        "writer": "Nasia Davos"
+    },
+    {
+        "id": "8",
+        "quote": "No one can quit smoking for you, or make you want to change your life. No one can make you do anything that you don’t want to do.",
+        "writer": "Gudjon Bergmann"
+    },
+    {
+        "id": "9",
+        "quote": "Tobacco is the enemy, disguised as a friend, and if you are to win the war, you must get to know your enemy.",
+        "writer": "Gudjon Bergmann"
+    },
+    {
+        "id": "10",
+        "quote": "Giving up smoking is the easiest thing in the world. I know because I’ve done it thousands of times.",
+        "writer": "Mark Twain"
+    }
+
+]
