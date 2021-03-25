@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import moment from "moment";
+import Banner from "../Banner/Banner";
 const Dashboard = () => {
   const [smokeFreeTime, setSmokeFreeTime] = useState("");
 
@@ -26,6 +27,7 @@ const Dashboard = () => {
 
   return (
     <div>
+      <Banner />
       <h1>Time Smoke free</h1>
       <h2>{smokeFreeTime}</h2>
     </div>

@@ -17,6 +17,7 @@ import LiveChat from "./components/LiveChat/LiveChat";
 import CreatePost from "./components/CreatePost/CreatePost";
 import MyPosts from "./components/MyPosts/MyPosts";
 import OnBoarding from "./components/OnBoarding/OnBoarding";
+import PostDetails from "./components/PostDetails/PostDetails";
 
 export const authentication = {
   isLoggedIn: false,
@@ -88,7 +89,9 @@ function App() {
           <Route path="/onBoarding">
             <OnBoarding />
           </Route>
-
+          <Route path="/postDetails/:postId">
+            <PostDetails />
+          </Route>
           {/* <SecuredRoute path="/dashboard" component={Dashboard}></SecuredRoute> */}
           {/* <SecuredRoute path="/community" component={Community}></SecuredRoute> */}
         </Switch>

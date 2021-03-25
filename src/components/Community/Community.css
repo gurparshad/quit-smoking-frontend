@@ -23,3 +23,9 @@
   color: aliceblue;
   background-color: #55bfd6;
 }
+
+.community__posts {
+  margin-top: 30px;
+  display: flex;
+  flex-wrap: wrap;
+}

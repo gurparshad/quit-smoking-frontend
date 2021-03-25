@@ -31,7 +31,7 @@ const OnBoarding = () => {
         type="text"
         name="quitDate"
         id="quitDate"
-        value={moment(new Date()).format("YYYY-MM-DD")}
+        value={moment(new Date()).format("YYYY-MM-DD hh:mm:ss")}
       />
       <input type="submit" value="Submit" className="onBoarding__submitBtn" />
     </form>

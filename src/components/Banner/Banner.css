@@ -1,0 +1,15 @@
+.banner {
+  text-align: center;
+}
+
+.banner__img {
+  object-fit: contain;
+  border-radius: 10px;
+  height: 500px;
+  max-height: 500px;
+}
+
+.banner__text {
+  margin: 20px;
+  color: rgb(132, 132, 122);
+}
