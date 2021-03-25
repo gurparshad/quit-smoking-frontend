@@ -7,7 +7,6 @@
   margin-top: 20px;
   margin-bottom: 20px;
   padding: 10px;
-  text-align: left;
 }
 
 .post__userName {
@@ -15,6 +14,7 @@
 }
 
 .post__deleteBtn {
+  margin-top: 40px;
   width: 200px;
   color: aliceblue;
   font-size: large;

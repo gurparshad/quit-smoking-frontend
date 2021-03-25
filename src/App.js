@@ -16,6 +16,7 @@ import Achievements from "./components/Achievements/Achievements";
 import LiveChat from "./components/LiveChat/LiveChat";
 import CreatePost from "./components/CreatePost/CreatePost";
 import MyPosts from "./components/MyPosts/MyPosts";
+import OnBoarding from "./components/OnBoarding/OnBoarding";
 
 export const authentication = {
   isLoggedIn: false,
@@ -54,7 +55,7 @@ function App() {
       <div className="app">
         <MenuBar />
         <Switch>
-          <Route exact path="/">
+          <Route exact path="/login">
             <Login />
           </Route>
           <Route path="/register">
@@ -83,6 +84,9 @@ function App() {
           </Route>
           <Route path="/myPosts">
             <MyPosts />
+          </Route>
+          <Route path="/onBoarding">
+            <OnBoarding />
           </Route>
 
           {/* <SecuredRoute path="/dashboard" component={Dashboard}></SecuredRoute> */}

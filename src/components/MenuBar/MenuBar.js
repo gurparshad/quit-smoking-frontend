@@ -2,6 +2,7 @@ import React from "react";
 import Navbar from "react-bootstrap/Navbar";
 import Nav from "react-bootstrap/Nav";
 import { NavLink } from "react-router-dom";
+import "./MenuBar.css";
 
 const MenuBar = () => {
   return (
@@ -10,18 +11,36 @@ const MenuBar = () => {
       style={{ backgroundColor: "#399EB5" }}
       className="justify-content-between"
     >
-      <Navbar.Brand href="#home">QuitNow</Navbar.Brand>
+      <NavLink className="navBrand" to="/">
+        QuitNow
+      </NavLink>
       <Navbar.Toggle aria-controls="basic-navbar-nav" />
       <Navbar.Collapse id="basic-navbar-nav">
         <Nav className="mr-auto">
-          <NavLink to="/dashboard">Home</NavLink>
-          <NavLink to="/community">Community</NavLink>
-          <Nav.Link href="#link">Tips</Nav.Link>
-          <Nav.Link href="#link">Motivation</Nav.Link>
-          <Nav.Link href="#link">Achievments</Nav.Link>
-          <Nav.Link href="#link">Login</Nav.Link>
-          <Nav.Link href="#link">Register</Nav.Link>
-          <Nav.Link href="#link">Logout</Nav.Link>
+          <NavLink className="navLink" to="/dashboard">
+            Home
+          </NavLink>
+          <NavLink className="navLink" to="/community">
+            Community
+          </NavLink>
+          <NavLink className="navLink" to="/tips">
+            Tips
+          </NavLink>
+          <NavLink className="navLink" to="/motivation">
+            Motivation
+          </NavLink>
+          <NavLink className="navLink" to="/achievements">
+            Achievments
+          </NavLink>
+          <NavLink className="navLink" to="/login">
+            Login
+          </NavLink>
+          <NavLink className="navLink" to="/register">
+            Register
+          </NavLink>
+          <NavLink className="navLink" to="">
+            Logout
+          </NavLink>
         </Nav>
       </Navbar.Collapse>
     </Navbar>

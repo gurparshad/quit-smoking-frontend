@@ -71,7 +71,9 @@ const Login = () => {
     <form onSubmit={submitHandler} className="login" data-test="login">
       <h2>Login Here</h2>
       <div className="login__formGroup">
-        <label htmlFor="email">Email:</label>
+        <label htmlFor="email" className="login__label">
+          Email:
+        </label>
         <input
           type="email"
           name="email"
@@ -86,7 +88,9 @@ const Login = () => {
         </p>
       </div>
       <div className="login__formGroup">
-        <label htmlFor="password">Password:</label>
+        <label htmlFor="password" className="login__label">
+          Password:
+        </label>
         <input
           type="password"
           name="password"
@@ -101,7 +105,7 @@ const Login = () => {
       </div>
       {loginError && <p className="register__error">{loginErrorMsg}</p>}
       <input
-        className="login__submitButton btn btn-primary"
+        className="login__submitButton "
         type="submit"
         value="Login"
         data-test="submitInput"

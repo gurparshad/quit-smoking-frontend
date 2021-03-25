@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react";
 import Post from "../Post/Post";
 import axios from "axios";
 import "./Community.css";
+import { Link } from "react-router-dom";
 
 const Community = () => {
   const [posts, setPosts] = useState([]);
@@ -23,7 +24,9 @@ const Community = () => {
       <h3 className="community__header">
         You are not alone, Read stories and thoughts of other people
       </h3>
-      <button className="community__shareBtn">Share Something...</button>
+      <Link to="/createPost" className="community__shareBtn">
+        Share Something...
+      </Link>
       <div className="community__posts">
         {posts.map((item) => (
           <Post data={item} />

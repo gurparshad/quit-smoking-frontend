@@ -1,0 +1,21 @@
+.navLink {
+  color: black;
+  margin: 10px;
+  font-size: large;
+}
+
+.navLink:hover {
+  color: rgb(243, 240, 240);
+  text-decoration: none;
+}
+
+.navBrand {
+  font-size: x-large;
+  color: black;
+  margin-right: 50px;
+}
+
+.navBrand:hover {
+  color: rgb(243, 240, 240);
+  text-decoration: none;
+}

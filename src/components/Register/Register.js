@@ -108,7 +108,9 @@ const Register = () => {
       <div className="register__formInner">
         <h2>Register Here</h2>
         <div className="register__formGroup">
-          <label htmlFor="firstName">First Name:</label>
+          <label htmlFor="firstName" className="register__label">
+            First Name:
+          </label>
           <input
             type="text"
             name="firstName"
@@ -124,7 +126,9 @@ const Register = () => {
           </p>
         </div>
         <div className="register__formGroup">
-          <label htmlFor="lastName">Last Name:</label>
+          <label htmlFor="lastName" className="register__label">
+            Last Name:
+          </label>
           <input
             type="text"
             name="lastName"
@@ -139,7 +143,9 @@ const Register = () => {
           </p>
         </div>
         <div className="register__formGroup">
-          <label htmlFor="email">Email:</label>
+          <label htmlFor="email" className="register__label">
+            Email:
+          </label>
           <input
             type="email"
             name="email"
@@ -155,7 +161,9 @@ const Register = () => {
         </div>
 
         <div className="register__formGroup">
-          <label htmlFor="password">Password:</label>
+          <label htmlFor="password" className="register__label">
+            Password:
+          </label>
           <input
             type="password"
             name="password"
@@ -170,7 +178,9 @@ const Register = () => {
         </div>
 
         <div className="register__formGroup">
-          <label htmlFor="confirmPassword">Confirm Password:</label>
+          <label htmlFor="confirmPassword" className="register__label">
+            Confirm Password:
+          </label>
           <input
             type="password"
             name="confirmPassword"
@@ -184,7 +194,7 @@ const Register = () => {
         </div>
         {registerError && <p className="register__error">{registerErrorMsg}</p>}
         <input
-          className="register__submitButton btn btn-primary"
+          className="register__submitButton"
           type="submit"
           value="Submit"
           data-test="submitInput"
@@ -193,7 +203,7 @@ const Register = () => {
           <p className="register__loginParagraph">
             Already have an account
             <span>
-              <Link to="/">Login</Link>
+              <Link to="/"> Login</Link>
             </span>
           </p>
         </div>
