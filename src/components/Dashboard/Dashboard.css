@@ -1,0 +1,26 @@
+.dashboard__time,
+.dashboard__moneySaved {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 20px;
+}
+
+.dashboard__communityBtn {
+  text-align: center;
+  width: 200px;
+  color: aliceblue;
+  font-size: large;
+  background-color: #399eb5;
+  border-radius: 10px;
+  border: none;
+  padding: 15px;
+  text-decoration: none;
+  margin: 10px;
+}
+
+.dashboard__communityBtn:hover {
+  text-decoration: none;
+  color: aliceblue;
+  background-color: #55bfd6;
+}

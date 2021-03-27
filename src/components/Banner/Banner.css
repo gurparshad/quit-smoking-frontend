@@ -13,3 +13,14 @@
   margin: 20px;
   color: rgb(132, 132, 122);
 }
+
+.banner__second {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.banner__textSecond {
+  margin: 20px;
+  color: #399eb5;
+}

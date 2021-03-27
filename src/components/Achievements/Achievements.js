@@ -2,25 +2,27 @@ import React, { useEffect, useState } from "react";
 import moment from "moment";
 import achievements from "./achievements.json";
 import "./Achievements.css";
+import axios from "axios";
 
 const Achievements = () => {
   const [daysSmokeFree, setDaysSmokeFree] = useState();
 
-  const calculateSmokeFreeTime = () => {
-    const startDate = new Date("2021-03-16 18:40:47");
-    const endDate = new Date();
-    console.log(startDate);
-    console.log(endDate);
-    const diff = endDate - startDate;
-    console.log(diff);
-    const diffDuration = moment.duration(diff);
-    console.log(diffDuration);
-    const days = diffDuration.days();
-    console.log(days);
-    setDaysSmokeFree(days);
-    const hours = diffDuration.hours();
-    console.log(hours);
-    const minutes = diffDuration.minutes();
+  const calculateSmokeFreeTime = async () => {
+    const user = JSON.parse(localStorage.getItem("user"));
+    const userId = user.id;
+    try {
+      const result = await axios.get(
+        `http://localhost:3002/api/1.0/userDetails/${userId}`,
+      );
+      const startDate = new Date(result.data.quitDate);
+      const endDate = new Date();
+      const diff = endDate - startDate;
+      const diffDuration = moment.duration(diff);
+      const days = diffDuration.days();
+      setDaysSmokeFree(days);
+    } catch (error) {
+      console.log(error);
+    }
   };
 
   useEffect(() => {

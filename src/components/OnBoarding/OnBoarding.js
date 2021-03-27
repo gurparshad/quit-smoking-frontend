@@ -1,6 +1,8 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import "./OnBoarding.css";
 import moment from "moment";
+import axios from "axios";
+import { useHistory, useLocation } from "react-router-dom";
 
 const OnBoarding = () => {
   const [cigarettesInPack, setCigarettesInPack] = useState();
@@ -9,32 +11,84 @@ const OnBoarding = () => {
   const [years, setYears] = useState();
   const [currency, setCurrency] = useState();
   const [quitDate, setQuitDate] = useState();
+  const history = useHistory();
+  const location = useLocation();
 
-  const saveData = () => {};
+  const saveData = async (e) => {
+    e.preventDefault();
+
+    let userDetails = {
+      packetCost: packCost,
+      cigarettesInPack: cigarettesInPack,
+      cigarettesEachDay: cigarettesInDay,
+      years: years,
+      currency: currency,
+      quitDate: quitDate,
+    };
+    let userId = location.pathname.split("/")[2];
+    await axios.post(
+      `http://localhost:3002/api/1.0/userDetails/${userId}`,
+      userDetails,
+    );
+    history.push(`/dashboard/${userId}`);
+  };
+
+  useEffect(() => {
+    setQuitDate(moment(new Date()).format("YYYY-MM-DD hh:mm:ss"));
+  }, []);
 
   return (
-    <form className="onBoarding" onSubmit={saveData}>
-      <label htmlFor="packCost">
-        How much does a packet of cigarettes cost ?
-      </label>
-      <input type="text" name="packCost" id="packCost" />
-      <label htmlFor="">How many cigarettes in a packet ?</label>
-      <input type="text" name="cigarettesInPack" id="cigarettesInPack" />
-      <label htmlFor="">How many you smoke each day ?</label>
-      <input type="text" name="cigarettesInDay" id="cigarettesInDay" />
-      <label htmlFor="">How many years have you been smoking ?</label>
-      <input type="text" name="years" id="years" />
-      <label htmlFor="">What is your currency ?</label>
-      <input type="text" name="currency" id="currency" />
-      <label htmlFor="">Quit Date</label>
-      <input
-        type="text"
-        name="quitDate"
-        id="quitDate"
-        value={moment(new Date()).format("YYYY-MM-DD hh:mm:ss")}
-      />
-      <input type="submit" value="Submit" className="onBoarding__submitBtn" />
-    </form>
+    <div>
+      <h3 className="onBoarding__header">Please answer these quiestions</h3>
+      <hr></hr>
+      <form className="onBoarding" onSubmit={saveData}>
+        <label htmlFor="packCost">
+          How much does a packet of cigarettes cost ?
+        </label>
+        <input
+          type="text"
+          name="packCost"
+          id="packCost"
+          onChange={(e) => setPackCost(e.target.value)}
+          required
+        />
+        <label htmlFor="">How many cigarettes in a packet ?</label>
+        <input
+          type="text"
+          name="cigarettesInPack"
+          id="cigarettesInPack"
+          onChange={(e) => setCigarettesInPack(e.target.value)}
+          required
+        />
+        <label htmlFor="">How many you smoke each day ?</label>
+        <input
+          type="text"
+          name="cigarettesInDay"
+          id="cigarettesInDay"
+          onChange={(e) => setCigarettesInDay(e.target.value)}
+          required
+        />
+        <label htmlFor="">How many years have you been smoking ?</label>
+        <input
+          type="text"
+          name="years"
+          id="years"
+          onChange={(e) => setYears(e.target.value)}
+          required
+        />
+        <label htmlFor="">What is your currency ?</label>
+        <input
+          type="text"
+          name="currency"
+          id="currency"
+          onChange={(e) => setCurrency(e.target.value)}
+          required
+        />
+        <label htmlFor="">Quit Date</label>
+        <input type="text" name="quitDate" id="quitDate" value={quitDate} />
+        <input type="submit" value="Submit" className="onBoarding__submitBtn" />
+      </form>
+    </div>
   );
 };
 

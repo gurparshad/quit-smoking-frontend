@@ -7,7 +7,8 @@
   margin: 30px;
 }
 
-.community__shareBtn {
+.community__shareBtn,
+.community__liveBtn {
   width: 200px;
   color: aliceblue;
   font-size: large;
@@ -16,9 +17,11 @@
   border: none;
   padding: 15px;
   text-decoration: none;
+  margin: 10px;
 }
 
-.community__shareBtn:hover {
+.community__shareBtn:hover,
+.community__liveBtn:hover {
   text-decoration: none;
   color: aliceblue;
   background-color: #55bfd6;

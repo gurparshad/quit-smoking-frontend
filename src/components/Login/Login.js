@@ -29,8 +29,7 @@ const Login = () => {
         .then((data) => {
           localStorage.setItem("user", JSON.stringify(data.data.user));
           authentication.onAuthentication();
-          localStorage.setItem("user", JSON.stringify(data.data.user));
-          history.push("/dashboard");
+          history.push(`/dashboard/${data.data.user.id}`);
         })
         .catch((err) => {
           if (err.response.status === 400) {

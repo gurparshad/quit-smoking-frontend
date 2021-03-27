@@ -30,20 +30,20 @@ const Register = () => {
     let isValid = false;
     isValid = validate(user);
     if (isValid) {
-      console.log("inside the if isValid");
-      await axios
-        .post("http://localhost:3002/api/1.0/users/register", user)
-        .then((data) => {
-          localStorage.setItem("user", JSON.stringify(data.data.user));
-          authentication.onAuthentication();
-          localStorage.setItem("user", JSON.stringify(data.data.user));
-          history.push("/dashboard");
-        })
-        .catch((err) => {
-          if (err.response.status === 400) {
-            setRegisterError(true);
-          }
-        });
+      try {
+        const result = await axios.post(
+          "http://localhost:3002/api/1.0/users/register",
+          user,
+        );
+        localStorage.setItem("user", JSON.stringify(result.data.user));
+        authentication.onAuthentication();
+        history.push(`/onBoarding/${result.data.user.id}`);
+      } catch (error) {
+        if (error.response.status === 400) {
+          setRegisterError(true);
+        }
+        console.log(error);
+      }
     }
   };
 

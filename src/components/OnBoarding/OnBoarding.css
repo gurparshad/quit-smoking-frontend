@@ -1,9 +1,7 @@
 .onBoarding {
   display: flex;
   flex-direction: column;
-  width: 70%;
-  margin-left: auto;
-  margin-right: auto;
+  align-items: center;
 }
 
 .onBoarding__submitBtn {
@@ -20,13 +18,20 @@
 }
 
 label {
-  margin: 20px 0px;
+  margin: 20px;
   text-align: left;
   font-size: larger;
-  font-weight: 700;
+  font-weight: 500;
+  font-size: x-large;
 }
 
 input {
   /* width: 500px; */
   padding: 15px;
+}
+
+.onBoarding__header {
+  margin: 10px;
+  font-weight: 400;
+  text-align: left;
 }

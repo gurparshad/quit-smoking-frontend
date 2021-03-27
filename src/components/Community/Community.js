@@ -22,11 +22,20 @@ const Community = () => {
   return (
     <div className="community">
       <h3 className="community__header">
-        You are not alone, Read stories and thoughts of other people
+        You are not alone, Read stories and thoughts of other people or chat
       </h3>
-      <Link to="/createPost" className="community__shareBtn">
-        Share Something...
-      </Link>
+      <div>
+        <Link to="/createPost" className="community__shareBtn">
+          Share Something...
+        </Link>
+        <Link to="/liveChat" className="community__liveBtn">
+          Live Chat 💬
+        </Link>
+        <Link to="/myPosts" className="community__shareBtn">
+          My Posts
+        </Link>
+      </div>
+
       <div className="community__posts">
         {posts.map((item) => (
           <Post data={item} />

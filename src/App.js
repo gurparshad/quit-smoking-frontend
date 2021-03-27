@@ -18,6 +18,9 @@ import CreatePost from "./components/CreatePost/CreatePost";
 import MyPosts from "./components/MyPosts/MyPosts";
 import OnBoarding from "./components/OnBoarding/OnBoarding";
 import PostDetails from "./components/PostDetails/PostDetails";
+import Home from "./components/Home/Home";
+import EditPost from "./components/EditPost/EditPost";
+import Profile from "./components/Profile/Profile";
 
 export const authentication = {
   isLoggedIn: false,
@@ -43,7 +46,7 @@ export const SecuredRoute = (props) => {
         authentication.getLogInStatus() ? (
           <props.component {...data}></props.component>
         ) : (
-          <Redirect to={{ pathname: "/" }}></Redirect>
+          <Redirect to={{ pathname: "/login" }}></Redirect>
         )
       }
     ></Route>
@@ -56,44 +59,79 @@ function App() {
       <div className="app">
         <MenuBar />
         <Switch>
+          <Route exact path="/">
+            <Home />
+          </Route>
           <Route exact path="/login">
             <Login />
           </Route>
           <Route path="/register">
             <Register />
           </Route>
-          <Route path="/community">
-            <Community />
-          </Route>
-          <Route path="/dashboard">
-            <Dashboard />
-          </Route>
+
           <Route path="/tips">
             <Tips />
           </Route>
           <Route path="/motivation">
             <Motivation />
           </Route>
-          <Route path="/achievements">
-            <Achievements />
-          </Route>
-          <Route path="/livechat">
-            <LiveChat />
-          </Route>
-          <Route path="/createPost">
-            <CreatePost />
-          </Route>
-          <Route path="/myPosts">
-            <MyPosts />
-          </Route>
-          <Route path="/onBoarding">
-            <OnBoarding />
-          </Route>
           <Route path="/postDetails/:postId">
             <PostDetails />
           </Route>
-          {/* <SecuredRoute path="/dashboard" component={Dashboard}></SecuredRoute> */}
-          {/* <SecuredRoute path="/community" component={Community}></SecuredRoute> */}
+
+          <SecuredRoute
+            exact
+            path="/myPosts/editPost/:postId"
+            component={EditPost}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/onBoarding/:userId"
+            component={OnBoarding}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/community"
+            component={Community}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/dashboard/:userId"
+            component={Dashboard}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/achievements"
+            component={Achievements}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/livechat"
+            component={LiveChat}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/createPost"
+            component={CreatePost}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/myPosts"
+            component={MyPosts}
+          ></SecuredRoute>
+
+          <SecuredRoute
+            exact
+            path="/profile"
+            component={Profile}
+          ></SecuredRoute>
         </Switch>
       </div>
     </Router>

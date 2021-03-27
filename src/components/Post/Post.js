@@ -1,20 +1,17 @@
 import axios from "axios";
 import React from "react";
 import "./Post.css";
-import { useHistory } from "react-router-dom";
+import { useHistory, Link } from "react-router-dom";
 
 const Post = ({ data, owner }) => {
   const MAX_LENGTH = 150;
   const history = useHistory();
-  const deletePost = async (e) => {
-    e.preventDefault();
-    const postId = data.id;
-    await axios.delete(`http://localhost:3002/api/1.0/posts/delete/${postId}`);
-    // history.push("/community");
-  };
 
   const onPostClick = () => {
     history.push(`/postDetails/${data.id}`);
+  };
+  const onPostEditClick = () => {
+    history.push(`myPosts/editPost/${data.id}`);
   };
   return (
     <div className="post">
@@ -43,11 +40,8 @@ const Post = ({ data, owner }) => {
           <button className="post__readMoreBtn" onClick={onPostClick}>
             Read More
           </button>
-          <button className="post__readMoreBtn" onClick={onPostClick}>
+          <button className="post__readMoreBtn" onClick={onPostEditClick}>
             Edit
-          </button>
-          <button onClick={deletePost} className="post__deleteBtn">
-            Delete
           </button>
         </div>
       )}
