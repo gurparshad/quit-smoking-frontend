@@ -46,7 +46,7 @@ const OnBoarding = () => {
           How much does a packet of cigarettes cost ?
         </label>
         <input
-          type="text"
+          type="number"
           name="packCost"
           id="packCost"
           onChange={(e) => setPackCost(e.target.value)}
@@ -54,7 +54,7 @@ const OnBoarding = () => {
         />
         <label htmlFor="">How many cigarettes in a packet ?</label>
         <input
-          type="text"
+          type="number"
           name="cigarettesInPack"
           id="cigarettesInPack"
           onChange={(e) => setCigarettesInPack(e.target.value)}
@@ -62,7 +62,7 @@ const OnBoarding = () => {
         />
         <label htmlFor="">How many you smoke each day ?</label>
         <input
-          type="text"
+          type="number"
           name="cigarettesInDay"
           id="cigarettesInDay"
           onChange={(e) => setCigarettesInDay(e.target.value)}
@@ -70,7 +70,7 @@ const OnBoarding = () => {
         />
         <label htmlFor="">How many years have you been smoking ?</label>
         <input
-          type="text"
+          type="number"
           name="years"
           id="years"
           onChange={(e) => setYears(e.target.value)}
