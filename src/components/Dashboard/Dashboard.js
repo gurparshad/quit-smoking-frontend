@@ -28,7 +28,7 @@ const Dashboard = () => {
       setSmokeFreeTime(`${days}d ${hours}h ${minutes}m`);
       const priceOfOneCigarette =
         result.data.packetCost / result.data.cigarettesInPack;
-      const moneySaved = Math.round(days * priceOfOneCigarette * 10) / 10;
+      const moneySaved = Math.round(days * (result.data.cigarettesEachDay * priceOfOneCigarette) * 10) / 10;
       setSavedMoney(moneySaved);
     } catch (error) {
       console.log(error);
@@ -56,7 +56,7 @@ const Dashboard = () => {
           You are doing great, Remember you are not alone.
         </p>
         <p>Get in touch with others in community section</p>
-        <Link to="/myPosts" className="dashboard__communityBtn">
+        <Link to="/community" className="dashboard__communityBtn">
           Community
         </Link>
       </div>

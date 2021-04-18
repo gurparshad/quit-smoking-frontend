@@ -1,8 +1,8 @@
 import React, { useEffect, useState } from "react";
 import "./Profile.css";
 import axios from "axios";
-import moment from "moment";
 import { useHistory } from "react-router-dom";
+import { authentication } from "../../App";
 
 const Profile = () => {
   const [userData, setUserData] = useState({});
@@ -10,8 +10,7 @@ const Profile = () => {
 
   const resetProgram = async (e) => {
     e.preventDefault();
-    console.log("--->", userData);
-    const newQuitDate = moment(new Date()).format("YYYY-MM-DD hh:mm:ss");
+    const newQuitDate =  new Date();
     const data = {
       quitDate: newQuitDate,
     };
@@ -27,7 +26,9 @@ const Profile = () => {
     await axios.delete(
       `http://localhost:3002/api/1.0/users/delete/${userData.userId}`,
     );
-    history.push("/");
+    localStorage.clear();
+    authentication.onLogout();
+    history.push("/register");
   };
 
   const getUserData = () => {

@@ -29,7 +29,7 @@ const Post = ({ data, owner }) => {
       {!owner ? (
         <div className="post__data">
           <div className="post__userName">
-            By {`${data.user.firstName} ${data.user.lastName} `}
+            By {`${data.user?.firstName} ${data.user?.lastName} `}
           </div>
           <button className="post__readMoreBtn" onClick={onPostClick}>
             Read More

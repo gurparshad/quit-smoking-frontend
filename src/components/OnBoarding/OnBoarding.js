@@ -34,7 +34,7 @@ const OnBoarding = () => {
   };
 
   useEffect(() => {
-    setQuitDate(moment(new Date()).format("YYYY-MM-DD hh:mm:ss"));
+    setQuitDate(new Date());
   }, []);
 
   return (
